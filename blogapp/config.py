@@ -8,4 +8,4 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_DEBUG = True
     MAIL_USERNAME = 'flaskblog.test0318@gmail.com'
-    MAIL_PASSWORD = 'Flaskblog@0318'
+    MAIL_PASSWORD = (your password)
