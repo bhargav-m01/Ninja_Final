@@ -5,7 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name:  Print greeting
-        run:  echo "Hello World"
+        run:  |
+              echo "Hello World"
+              echo " This is multi line check"
       - name:  Print Goodbye
         run:  echo "Done - Bye!"
   second_job:
