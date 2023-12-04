@@ -8,3 +8,8 @@ jobs:
         run:  echo "Hello World"
       - name:  Print Goodbye
         run:  echo "Done - Bye!"
+  second_job:
+    runs-on:  windows-latest
+    steps:
+      - name:  Print Goodbye in windows 
+        run:  echo "Done - Bye from Windows server"
