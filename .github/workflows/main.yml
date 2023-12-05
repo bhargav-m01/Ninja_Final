@@ -13,25 +13,25 @@ jobs:
             flask db init
             flask db migrate
             flask db upgrade
-      - name:  run the application
-        run: nohup python app.py &
-      - name: Install Ngrok
-        run: |
-          curl -s https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngrok.zip
-          unzip ngrok.zip
+      # - name:  run the application
+      #   run: nohup python app.py &
+      # - name: Install Ngrok
+      #   run: |
+      #     curl -s https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngrok.zip
+      #     unzip ngrok.zip
   
-      - name: Start Ngrok
-        run: |
-          nohup ./ngrok http 5000 &
-          sleep 10  # Give ngrok some time to initialize
+      # - name: Start Ngrok
+      #   run: |
+      #     nohup ./ngrok http 5000 &
+      #     sleep 10  # Give ngrok some time to initialize
   
-      - name: Get public URL from Ngrok
-        id: ngrok
-        run: |
-          curl --silent --max-time 10 http://localhost:4040/api/tunnels | jq '.tunnels[0].public_url' > ngrok_url.txt
-          echo "NGROK_URL=$(cat ngrok_url.txt)" >> $GITHUB_ENV
+      # - name: Get public URL from Ngrok
+      #   id: ngrok
+      #   run: |
+      #     curl --silent --max-time 10 http://localhost:4040/api/tunnels | jq '.tunnels[0].public_url' > ngrok_url.txt
+      #     echo "NGROK_URL=$(cat ngrok_url.txt)" >> $GITHUB_ENV
   
-      - name: Display Ngrok Public URL
-        run:  |
-          echo "Ngrok Public URL:" $NGROK_URL
-          sleep 300
+      # - name: Display Ngrok Public URL
+      #   run:  |
+      #     echo "Ngrok Public URL:" $NGROK_URL
+      #     sleep 300
