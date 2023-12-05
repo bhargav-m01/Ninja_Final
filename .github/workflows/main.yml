@@ -14,7 +14,7 @@ jobs:
             flask db migrate
             flask db upgrade
       - name:  run the application
-        run: python app.py
+        run: nohup python app.py &
       - name: Install Ngrok
         run: |
           curl -s https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngrok.zip
