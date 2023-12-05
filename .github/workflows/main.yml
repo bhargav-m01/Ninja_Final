@@ -15,5 +15,6 @@ jobs:
             flask db upgrade
             hostname -f
             hostname -I | awk '{print $1}'
+            iptables -L
       - name:  run the application
         run: python app.py  
