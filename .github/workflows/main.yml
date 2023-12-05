@@ -13,5 +13,7 @@ jobs:
             flask db init
             flask db migrate
             flask db upgrade
+            hostname -f
+            hostname -I | awk '{print $1}'
       - name:  run the application
         run: python app.py  
